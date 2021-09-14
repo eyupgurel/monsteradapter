@@ -15,8 +15,8 @@ android {
     defaultConfig {
         minSdk 26
         targetSdk 31
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 9
+        versionName "1.0.8"
 
         // 1) Make sure to use the AndroidJUnitRunner, or a subclass of it. This requires a dependency on androidx.test:runner, too!
         testInstrumentationRunner "com.futurance.futurex.test.CustomTestRunner"
@@ -95,12 +95,19 @@ dependencies {
     testImplementation "io.mockk:mockk:$mockkVersion"
 }
 afterEvaluate {
+
+
     publishing {
         publications {
+            debug(MavenPublication) {
+                groupId = 'com.eyup.gurel.lib.adapter.monster'
+                artifactId = 'app'
+                version = '1.0.8'
+            }
             release(MavenPublication) {
                 groupId = 'com.eyup.gurel.lib.adapter.monster'
                 artifactId = 'app'
-                version = '1.0.7'
+                version = '1.0.8'
             }
         }
     }
